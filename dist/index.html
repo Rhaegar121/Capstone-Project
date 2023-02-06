@@ -22,7 +22,7 @@
     </header>
     <section class="comment">
         <div>
-            <img src="images/ycee's post.jpg" alt="project image">
+            <img src="./images/ycee's post.jpg" alt="project image">
             <span class="material-symbols-outlined">
                 close
                 </span>
@@ -35,13 +35,14 @@
             <div>Power: 100,000,000</div>
         </div>
         <h3>Comments (2)</h3>
-        <div>03/11/2021 Alex: I'd love to buy it!</div>
-        <div>03/12/2021 Mia: I love</div>
-        <h4></h4>
+        <div class="comments">
+            <p>03/11/2021 Alex: I'd love to buy it!</p>
+            <p>03/12/2021 Mia: I love</p>
+        </div>
+        <h4>Add a comment</h4>
         <form action="">
-            <h4>Add a comment</h4>
-            <div><input type="text" placeholder="Your name"></div>
-            <div><input type="text" placeholder="Your insights"></div>
+            <div><input type="text" id="name" placeholder="Your name"></div>
+            <div><textarea type="text" id="comments" placeholder="Your insights" maxlength="500"></textarea></div>
             <button type="submit">Comment</button>
         </form>
     </section>
