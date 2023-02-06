@@ -6,6 +6,5 @@ window.onload = () => {
   displayData();
 };
 
-
 const image = document.getElementById('picture');
 image.src = picture;
