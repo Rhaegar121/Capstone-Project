@@ -74,6 +74,15 @@ header #link a {
   margin-bottom: 10px;
 }
 
+button {
+  width: fit-content;
+  padding: 5px;
+  align-self: flex-end;
+  border: var(--my-border);
+  box-shadow: 2px 2px black;
+  cursor: pointer;
+}
+
 #home .container button {
   background-color: #fff;
   padding: 7px;
@@ -145,13 +154,4 @@ textarea {
   padding: 5px;
   width: 300px;
   height: 100px;
-}
-
-button {
-  width: fit-content;
-  padding: 5px;
-  align-self: flex-end;
-  border: var(--my-border);
-  box-shadow: 2px 2px black;
-  cursor: pointer;
 }
