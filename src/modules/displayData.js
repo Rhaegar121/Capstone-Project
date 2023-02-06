@@ -1,10 +1,11 @@
 import getData from './getData.js';
+import getMovie from './displayComment.js';
 
 const displayData = async () => {
-  try {
     const home = document.querySelector('#home');
+    const comment = document.querySelector('comment');
     const dataArray = await getData();
-    dataArray.forEach((data) => {
+    dataArray.forEach((data, index) => {
       const dataCard = document.createElement('div');
       dataCard.classList.add('container');
       dataCard.innerHTML = `<img src="${data.image.medium}" alt="${data.name}">
@@ -12,13 +13,49 @@ const displayData = async () => {
       <span class="title">${data.name}</span>
       <i class="fa-regular fa-heart"></i>
       </div>
-      <button>Comments</button>
+      <button class="film${index}">Comments</button>
       <button>Reservations</button>`;
-      return home.appendChild(dataCard);
+
+      home.appendChild(dataCard);
+
+      const movieBtn = document.querySelector(`film${index}`)
+      movieBtn.addEventListener('click', async () => {
+        console.log('hello world')
+        const movie = await getMovie(data.id);
+        comment.innerHTML = `
+        <div class="image">
+            <img src="${data.image.original}" id="picture" alt="${data.name}">
+            <span class="material-symbols-outlined close" id="closeBtn${index}">
+                close
+                </span>
+        </div>
+        <h2>${data.name}</h2>
+        <div class="properties">
+            <div>Language: ${data.language}</div>
+            <div>Average Rating: ${data.rating.average}</div>
+            <div>Type: ${data.type}</div>
+            <div>Date produced: ${data.premiered}</div>
+            <div>Genres: ${data.genres[0], data.genres[1]}</div>
+            <div>Summary: ${data.summary}</div>
+        </div>
+        <h3>Comments (2)</h3>
+        <div class="comments">
+            <p>03/11/2021 Alex: I'd love it!</p>
+            <p>03/12/2021 Mia: I love</p>
+        </div>
+        <h4>Add a comment</h4>
+        <form action="">
+            <div><input type="text" id="name" placeholder="Your name"></div>
+            <div><textarea type="text" id="comments" placeholder="Your insights" maxlength="500"></textarea></div>
+            <button type="submit" class="Btn">Comment</button>
+        </form>`;
+
+        const closeMovie = document.querySelector('#closeBtn${index}');
+        closeMovie.addEventListener('click', () => comment.classList.add('hide'));
+      
+        closeMovie.classList.remove('hide');
+      })
     });
-  } catch (errorMsg) {
-    throw new Error(errorMsg);
-  }
 };
 
 export default displayData;
