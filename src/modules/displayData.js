@@ -3,7 +3,6 @@ import getMovie from './displayComment.js';
 
 const displayData = async () => {
     const home = document.querySelector('#home');
-    const comment = document.querySelector('comment');
     const dataArray = await getData();
     dataArray.forEach((data, index) => {
       const dataCard = document.createElement('div');
@@ -13,14 +12,16 @@ const displayData = async () => {
       <span class="title">${data.name}</span>
       <i class="fa-regular fa-heart"></i>
       </div>
-      <button class="film${index}">Comments</button>
+      <button id="film${index}">Comments</button>
       <button>Reservations</button>`;
 
       home.appendChild(dataCard);
 
-      const movieBtn = document.querySelector(`film${index}`)
+      const movieBtn = document.getElementById(`film${index}`)
       movieBtn.addEventListener('click', async () => {
         console.log('hello world')
+        const comment = document.querySelector('.comment');
+        comment.classList.remove('hide')
         const movie = await getMovie(data.id);
         comment.innerHTML = `
         <div class="image">
@@ -52,8 +53,6 @@ const displayData = async () => {
 
         const closeMovie = document.querySelector('#closeBtn${index}');
         closeMovie.addEventListener('click', () => comment.classList.add('hide'));
-      
-        closeMovie.classList.remove('hide');
       })
     });
 };
