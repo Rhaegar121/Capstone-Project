@@ -34,3 +34,11 @@ header #link a {
     margin-left: 60px;
     color: #000;
 }
+
+footer {
+    position: fixed;
+    padding: 40px;
+    bottom: 0;
+    width: 100%;
+    border-top: 2px solid black;
+}
