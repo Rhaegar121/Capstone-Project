@@ -12,6 +12,11 @@
   --my-border: 2px solid var(--border);
 }
 
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 header {
   display: flex;
   flex-wrap: nowrap;
@@ -46,6 +51,24 @@ footer {
   bottom: 0;
   width: 100%;
   border-top: 1px solid #cdcdcd;
+}
+
+.close {
+  width: 5%;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.image {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 320px;
+}
+
+#picture {
+  object-fit: fill;
+  width: 95%;
 }
 
 .hide {

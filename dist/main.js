@@ -115,7 +115,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n//# sourceURL=webpack://webpack/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _images_picture_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./images/picture.jpg */ \"./src/images/picture.jpg\");\n\r\n\r\n\r\nconst image = document.getElementById('picture')\r\nimage.src = _images_picture_jpg__WEBPACK_IMPORTED_MODULE_1__;\r\n\n\n//# sourceURL=webpack://webpack/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/images/picture.jpg":
+/*!********************************!*\
+  !*** ./src/images/picture.jpg ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"c03e77d2c1bb82203288.jpg\";\n\n//# sourceURL=webpack://webpack/./src/images/picture.jpg?");
 
 /***/ })
 
