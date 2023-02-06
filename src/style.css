@@ -1,36 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 header {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 60px;
-    border-bottom: 1px solid #cdcdcd;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  border-bottom: 1px solid #cdcdcd;
 }
 
 header #logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    font-size: 13.5px;
-    font-weight: 600;
-    border: 2px solid #000;
-    border-radius: 50%;
-    padding: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border: 2px solid #000;
+  border-radius: 50%;
+  padding: 13px;
 }
 
 header #link a {
-    text-decoration: none;
-    font-size: 20px;
-    margin-left: 60px;
-    color: #000;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 60px;
+  color: #000;
+}
+
+footer {
+  position: fixed;
+  padding: 40px;
+  bottom: 0;
+  width: 100%;
+  border-top: 2px solid black;
 }
