@@ -40,5 +40,9 @@ footer {
   padding: 40px;
   bottom: 0;
   width: 100%;
-  border-top: 2px solid black;
+  border-top: 1px solid #cdcdcd;
+}
+
+.hide {
+  display: none;
 }
