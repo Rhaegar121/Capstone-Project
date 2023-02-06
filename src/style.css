@@ -22,7 +22,7 @@ header {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 60px;
+  padding: 10px 60px;
   border-bottom: 1px solid #cdcdcd;
 }
 
@@ -31,7 +31,7 @@ header #logo {
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  font-size: 13.5px;
+  font-size: 10px;
   font-weight: 600;
   border: 2px solid #000;
   border-radius: 50%;
@@ -45,12 +45,57 @@ header #link a {
   color: #000;
 }
 
+#home {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  row-gap: 30px;
+  margin-top: 10px;
+}
+
+#home .container {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#home .container img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 20px;
+}
+
+#home .container .caption {
+  font-size: 19px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.Btn {
+  width: fit-content;
+  padding: 5px;
+  align-self: flex-end;
+  border: var(--my-border);
+  box-shadow: 2px 2px black;
+  cursor: pointer;
+}
+
+#home .container button {
+  background-color: #fff;
+  padding: 7px;
+  margin: 5px 0;
+  box-shadow: 3px 3px #292929;
+}
+
 footer {
-  position: fixed;
-  padding: 40px;
+  padding: 30px;
   bottom: 0;
   width: 100%;
   border-top: 1px solid #cdcdcd;
+  background-color: #fff;
 }
 
 .close {
@@ -69,10 +114,6 @@ footer {
 #picture {
   object-fit: fill;
   width: 95%;
-}
-
-.hide {
-  display: none;
 }
 
 .comment {
@@ -111,11 +152,6 @@ textarea {
   height: 100px;
 }
 
-button {
-  width: fit-content;
-  padding: 5px;
-  align-self: flex-end;
-  border: var(--my-border);
-  box-shadow: 2px 2px black;
-  cursor: pointer;
+.hide {
+  display: none;
 }
