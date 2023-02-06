@@ -55,10 +55,10 @@
   "main": "list.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rhaegar121/To-Do-list.git"
+    "url": "git+https://github.com/Rhaegar121/Capstone-Project"
   },
   "bugs": {
-    "url": "https://github.com/Rhaegar121/To-Do-list/issues"
+    "url": "https://github.com/Rhaegar121/Capstone-Project/issues"
   },
-  "homepage": "https://github.com/Rhaegar121/To-Do-list#readme"
+  "homepage": "https://github.com/Rhaegar121/Capstone-Project#readme"
 }
