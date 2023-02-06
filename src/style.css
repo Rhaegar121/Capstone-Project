@@ -74,7 +74,7 @@ header #link a {
   margin-bottom: 10px;
 }
 
-button {
+.Btn {
   width: fit-content;
   padding: 5px;
   align-self: flex-end;
@@ -116,10 +116,6 @@ footer {
   width: 95%;
 }
 
-.hide {
-  display: none;
-}
-
 .comment {
   display: flex;
   flex-direction: column;
@@ -154,4 +150,8 @@ textarea {
   padding: 5px;
   width: 300px;
   height: 100px;
+}
+
+.hide {
+  display: none;
 }
