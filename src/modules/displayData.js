@@ -1,5 +1,4 @@
-import getData from './getData.js';
-import getMovie from './displayComment.js';
+import { getData, getMovie } from './util.js';
 
 const displayData = async () => {
   const home = document.querySelector('#home');
@@ -44,7 +43,7 @@ const displayData = async () => {
             <p>03/12/2021 Mia: I love</p>
         </div>
         <h4>Add a comment</h4>
-        <form action="">
+        <form action="post">
             <div><input type="text" id="name" placeholder="Your name"></div>
             <div><textarea type="text" id="comments" placeholder="Your insights" maxlength="500"></textarea></div>
             <button type="submit" class="Btn">Comment</button>
