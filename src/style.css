@@ -172,6 +172,7 @@ h2 {
   position: relative;
   overflow: hidden;
   overflow-y: auto;
+  height: 100vh;
 }
 
 .properties {

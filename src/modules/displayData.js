@@ -1,5 +1,5 @@
 import {
-  getData, getLike, getMovie, pushLike,
+  getData, getLike, getMovie, pushLike, pushComment, getComment,
 } from './util.js';
 import movieCount from './movieCounter.js';
 
@@ -11,8 +11,10 @@ const displayData = async () => {
   const dataArray = await getData();
   // looping through the array
   dataArray.forEach((data, index) => {
+
     // filtering the like for the movie id
     const likes = allLikes.filter((like) => like.item_id === data.id);
+
     // creating a new div element
     const dataCard = document.createElement('div');
     dataCard.classList.add('container');

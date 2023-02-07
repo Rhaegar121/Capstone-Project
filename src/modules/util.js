@@ -31,6 +31,26 @@ const getLike = async () => {
   return data;
 };
 
+const pushComment = async (id, username, comment) => {
+  await fetch(`${involvementUrl}comments/`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: id,
+      user: username,
+      word: comment
+    }),
+  });
+};
+
+const getComment = async (id) => {
+  const response = await fetch(`${involvementUrl}comments?item_id=${id}`);
+  const data = await response.json();
+  return data;
+};
+
 export {
-  getData, getMovie, getLike, pushLike,
+  getData, getMovie, getLike, pushLike, pushComment, getComment
 };
