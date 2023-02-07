@@ -1,6 +1,7 @@
 import {
   getData, getLike, getMovie, pushLike, pushComment, getComment,
 } from './util.js';
+import updateComment from './displayComment.js';
 import movieCount from './movieCounter.js';
 
 const displayData = async () => {
@@ -9,6 +10,7 @@ const displayData = async () => {
   const allLikes = await getLike();
   // fetching the movie data from the API
   const dataArray = await getData();
+
   // looping through the array
   dataArray.forEach((data, index) => {
 
@@ -46,6 +48,7 @@ const displayData = async () => {
       const comment = document.querySelector('.comment');
       comment.classList.remove('hide');
       const movie = await getMovie(data.id);
+
       comment.innerHTML = `
       <div class="comment-container">
         <div class="image">
@@ -63,18 +66,39 @@ const displayData = async () => {
             <div><b>Genres:</b> ${movie.genres[0]}, ${movie.genres[1]}</div>
             <div><b>Summary:</b> ${movie.summary}</div>
         </div>
-        <h3>Comments (2)</h3>
-        <div class="comments">
-            <p>03/11/2021 Alex: I'd love it!</p>
-            <p>03/12/2021 Mia: I love</p>
-        </div>
+        <section class="add_comment">
+        <div class="comments"></div>
         <h4>Add a comment</h4>
-        <form action="post">
+        <form action="">
             <div><input type="text" id="name" placeholder="Your name"></div>
             <div><textarea type="text" id="comments" placeholder="Your insights" maxlength="500"></textarea></div>
-            <button type="submit" class="Btn">Comment</button>
+            <button type="submit" class="Btn" id="submitComment">Comment</button>
         </form>
+        </section>
       </div>`;
+
+      updateComment(movie.id);
+
+      const inputName = document.getElementById('name')
+      const inputComment = document.getElementById('comments')
+      const submit = document.getElementById('submitComment')
+
+      submit.addEventListener('click', (event) => {
+        event.preventDefault();
+        // add new comment
+        if (inputName.value !== '' && inputComment.value !== '') {
+          console.log('clicked')
+          pushComment(movie.id, inputName.value, inputComment.value);
+          const newComment = getComment(movie.id)
+          console.log(newComment)
+
+          inputName.value = '';
+          inputComment.value = '';
+        }
+
+        updateComment();
+      })
+
       const closeMovie = document.querySelector(`#closeBtn${index}`);
       closeMovie.addEventListener('click', () => comment.classList.add('hide'));
     });

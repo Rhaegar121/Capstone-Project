@@ -188,6 +188,14 @@ h2 {
   gap: 15px;
 }
 
+.add_comment {
+  gap: 15px;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    margin-top: 20px;
+}
+
 form {
   display: flex;
   flex-direction: column;

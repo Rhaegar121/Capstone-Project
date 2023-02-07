@@ -39,8 +39,8 @@ const pushComment = async (id, username, comment) => {
     },
     body: JSON.stringify({
       item_id: id,
-      user: username,
-      word: comment
+      username: username,
+      comment: comment,
     }),
   });
 };
