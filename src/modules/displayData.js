@@ -37,6 +37,7 @@ const displayData = async () => {
       comment.classList.remove('hide');
       const movie = await getMovie(data.id);
       comment.innerHTML = `
+      <div class="comment-container">
         <div class="image">
             <img src="${movie.image.original}" id="picture" alt="${movie.name}">
             <span class="material-symbols-outlined close" id="closeBtn${index}">
@@ -62,8 +63,8 @@ const displayData = async () => {
             <div><input type="text" id="name" placeholder="Your name"></div>
             <div><textarea type="text" id="comments" placeholder="Your insights" maxlength="500"></textarea></div>
             <button type="submit" class="Btn">Comment</button>
-        </form>`;
-
+        </form>
+      </div>`;
       const closeMovie = document.querySelector(`#closeBtn${index}`);
       closeMovie.addEventListener('click', () => comment.classList.add('hide'));
     });
