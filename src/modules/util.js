@@ -26,7 +26,7 @@ const pushLike = async (id) => {
 };
 
 const getLike = async () => {
-  const response = await fetch(`${involvementUrl}likes/`);
+  const response = await fetch(`${involvementUrl}likes`);
   const data = await response.json();
   return data;
 }
