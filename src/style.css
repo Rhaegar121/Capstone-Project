@@ -46,11 +46,22 @@ header #link a {
   color: #000;
 }
 
+#counter {
+  position: absolute;
+  text-align: center;
+  right: 60px;
+  top: 89px;
+  padding: 7px 0px;
+  border: 2px solid #000;
+  width: 290px;
+  box-shadow: 3px 3px #292929;
+}
+
 #home {
   display: grid;
   grid-template-columns: auto auto auto auto;
   row-gap: 30px;
-  margin-top: 10px;
+  margin-top: 50px;
 }
 
 #home .container {

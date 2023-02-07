@@ -1,23 +1,24 @@
 import {
   getData, getLike, getMovie, pushLike,
 } from './util.js';
+import movieCount from './movieCounter.js';
 
 const displayData = async () => {
   const home = document.querySelector('#home');
-  const dataArray = await getData();
   const allLikes = await getLike();
+  const dataArray = await getData();
   dataArray.forEach((data, index) => {
     const likes = allLikes.filter((like) => like.item_id === data.id);
     const dataCard = document.createElement('div');
     dataCard.classList.add('container');
     dataCard.innerHTML = `<img src="${data.image.medium}" alt="${data.name}">
-      <div class="caption">
-      <span class="title">${data.name}</span>
-      <i class="fa-regular fa-heart"></i>
-      </div>
-      <p id="like">${likes.length > 0 ? likes[0].likes : 0} Likes</p>
-      <button id="film${index}">Comments</button>
-      <button>Reservations</button>`;
+    <div class="caption">
+    <span class="title">${data.name}</span>
+    <i class="fa-regular fa-heart"></i>
+    </div>
+    <p id="like">${likes.length > 0 ? likes[0].likes : 0} Likes</p>
+    <button id="film${index}">Comments</button>
+    <button>Reservations</button>`;
 
     home.appendChild(dataCard);
 
@@ -27,6 +28,8 @@ const displayData = async () => {
       pushLike(data.id);
       like.innerHTML = `${likes[0].likes + 1} Likes`;
     };
+
+    movieCount(dataArray.length);
 
     const movieBtn = document.getElementById(`film${index}`);
     movieBtn.addEventListener('click', async () => {

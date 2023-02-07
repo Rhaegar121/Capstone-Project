@@ -29,6 +29,8 @@ const getLike = async () => {
   const response = await fetch(`${involvementUrl}likes`);
   const data = await response.json();
   return data;
-}
+};
 
-export { getData, getMovie, getLike, pushLike };
+export {
+  getData, getMovie, getLike, pushLike,
+};
