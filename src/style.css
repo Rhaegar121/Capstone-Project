@@ -73,6 +73,14 @@ header #link a {
   margin-bottom: 10px;
 }
 
+#home .container .caption .fa-heart:hover {
+  cursor: pointer;
+}
+
+#home .container .caption .fa-heart:active {
+  transform: scale(1.2);
+}
+
 .Btn {
   width: fit-content;
   padding: 5px;

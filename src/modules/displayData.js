@@ -1,9 +1,13 @@
-import { getData, getMovie } from './util.js';
+import {
+  getData, getLike, getMovie, pushLike,
+} from './util.js';
 
 const displayData = async () => {
   const home = document.querySelector('#home');
+  const allLikes = await getLike();
   const dataArray = await getData();
   dataArray.forEach((data, index) => {
+    const likes = allLikes.filter((like) => like.item_id === data.id);
     const dataCard = document.createElement('div');
     dataCard.classList.add('container');
     dataCard.innerHTML = `<img src="${data.image.medium}" alt="${data.name}">
@@ -11,10 +15,19 @@ const displayData = async () => {
       <span class="title">${data.name}</span>
       <i class="fa-regular fa-heart"></i>
       </div>
+      <p class="like">${likes.length > 0 ? likes[0].likes : 0} Likes</p>
       <button id="film${index}">Comments</button>
       <button>Reservations</button>`;
 
     home.appendChild(dataCard);
+
+    const likeBtn = dataCard.querySelector('.fa-heart');
+    likeBtn.onclick = (e) => {
+      const like = e.target.parentElement.querySelector('.like');
+      pushLike(data.id);
+      like.innerHTML = `${likes[0].likes + 1} Likes`;
+      window.location.reload();
+    };
 
     const movieBtn = document.getElementById(`film${index}`);
     movieBtn.addEventListener('click', async () => {

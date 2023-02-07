@@ -1,4 +1,4 @@
-import { baseUrl } from './api.js';
+import { baseUrl, involvementUrl } from './api.js';
 
 const getData = async () => {
   const response = await fetch(baseUrl);
@@ -13,4 +13,22 @@ const getMovie = async (id) => {
   return data;
 };
 
-export { getData, getMovie };
+const pushLike = async (id) => {
+  await fetch(`${involvementUrl}likes/`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: id,
+    }),
+  });
+};
+
+const getLike = async () => {
+  const response = await fetch(`${involvementUrl}likes/`);
+  const data = await response.json();
+  return data;
+}
+
+export { getData, getMovie, getLike, pushLike };
