@@ -15,6 +15,7 @@
 img {
   max-width: 100%;
   max-height: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 header {
@@ -63,7 +64,6 @@ header #link a {
   width: 200px;
   height: 250px;
   object-fit: cover;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 20px;
 }
 
@@ -99,40 +99,50 @@ footer {
 }
 
 .close {
-  width: 5%;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bolder;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  padding-right: 25px;
 }
 
 .image {
   display: flex;
   flex-direction: row;
-  width: 60%;
+  width: 100%;
   height: 320px;
+  gap: 30px;
+  justify-content: center;
 }
 
 #picture {
   object-fit: fill;
-  width: 95%;
+  width: 500px;
+}
+
+h2 {
+  font-size: 50px;
 }
 
 .comment {
   width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    background: rgba(151, 148, 147, 50%);
-    backdrop-filter: blur(3px);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background: rgba(151, 148, 147, 70%);
+  backdrop-filter: blur(3px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px;
+  gap: 15px;
+  padding: 30px;
 }
 
 .properties {
   display: grid;
   grid-template-columns: auto auto;
-  gap: 20px;
+  gap: 15px;
   column-gap: 80px;
 }
 

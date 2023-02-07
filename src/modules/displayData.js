@@ -2,12 +2,12 @@ import getData from './getData.js';
 import getMovie from './displayComment.js';
 
 const displayData = async () => {
-    const home = document.querySelector('#home');
-    const dataArray = await getData();
-    dataArray.forEach((data, index) => {
-      const dataCard = document.createElement('div');
-      dataCard.classList.add('container');
-      dataCard.innerHTML = `<img src="${data.image.medium}" alt="${data.name}">
+  const home = document.querySelector('#home');
+  const dataArray = await getData();
+  dataArray.forEach((data, index) => {
+    const dataCard = document.createElement('div');
+    dataCard.classList.add('container');
+    dataCard.innerHTML = `<img src="${data.image.medium}" alt="${data.name}">
       <div class="caption">
       <span class="title">${data.name}</span>
       <i class="fa-regular fa-heart"></i>
@@ -15,29 +15,28 @@ const displayData = async () => {
       <button id="film${index}">Comments</button>
       <button>Reservations</button>`;
 
-      home.appendChild(dataCard);
+    home.appendChild(dataCard);
 
-      const movieBtn = document.getElementById(`film${index}`)
-      movieBtn.addEventListener('click', async () => {
-        console.log('hello world')
-        const comment = document.querySelector('.comment');
-        comment.classList.remove('hide')
-        const movie = await getMovie(data.id);
-        comment.innerHTML = `
+    const movieBtn = document.getElementById(`film${index}`);
+    movieBtn.addEventListener('click', async () => {
+      const comment = document.querySelector('.comment');
+      comment.classList.remove('hide');
+      const movie = await getMovie(data.id);
+      comment.innerHTML = `
         <div class="image">
-            <img src="${data.image.original}" id="picture" alt="${data.name}">
+            <img src="${movie.image.original}" id="picture" alt="${movie.name}">
             <span class="material-symbols-outlined close" id="closeBtn${index}">
                 close
                 </span>
         </div>
-        <h2>${data.name}</h2>
+        <h2>${movie.name}</h2>
         <div class="properties">
-            <div>Language: ${data.language}</div>
-            <div>Average Rating: ${data.rating.average}</div>
-            <div>Type: ${data.type}</div>
-            <div>Date produced: ${data.premiered}</div>
-            <div>Genres: ${data.genres[0], data.genres[1]}</div>
-            <div>Summary: ${data.summary}</div>
+            <div><b>Language:</b> ${movie.language}</div>
+            <div><b>Average Rating:</b> ${movie.rating.average}</div>
+            <div><b>Type:</b> ${movie.type}</div>
+            <div><b>Date produced:</b> ${movie.premiered}</div>
+            <div><b>Genres:</b> ${movie.genres[0]}, ${movie.genres[1]}</div>
+            <div><b>Summary:</b> ${movie.summary}</div>
         </div>
         <h3>Comments (2)</h3>
         <div class="comments">
@@ -51,10 +50,10 @@ const displayData = async () => {
             <button type="submit" class="Btn">Comment</button>
         </form>`;
 
-        const closeMovie = document.querySelector('#closeBtn${index}');
-        closeMovie.addEventListener('click', () => comment.classList.add('hide'));
-      })
+      const closeMovie = document.querySelector(`#closeBtn${index}`);
+      closeMovie.addEventListener('click', () => comment.classList.add('hide'));
     });
+  });
 };
 
 export default displayData;
