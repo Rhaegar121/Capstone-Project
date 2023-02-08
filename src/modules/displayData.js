@@ -100,7 +100,6 @@ const displayData = async () => {
         updateComment(movie.id);
         
       })
-      updateComment(movie.id);
 
       const closeMovie = document.querySelector(`#closeBtn${index}`);
       closeMovie.addEventListener('click', () => comment.classList.add('hide'));
