@@ -1,12 +1,14 @@
 import { getComment } from "./util.js"
 import countComments from "./commentCounter.js";
+import refreshComment from "./refreshComments.js";
 
 const updateComment = async (id) => {
 
     // get comments and number of comments
-    const commentsNo = await countComments(id)
+    await refreshComment(id)
     const gotComment = await getComment(id)
-    console.log(gotComment)
+    const commentsNo = await countComments(id)
+    console.log(commentsNo)
 
     const commentSection = document.querySelector('h3');
     commentSection.innerHTML = `
