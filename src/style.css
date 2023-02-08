@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
 
 * {
+  color: white;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,6 +17,10 @@ img {
   max-width: 100%;
   max-height: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+body {
+  background-image: url(./assets/bgImage.jpg);
 }
 
 header {
@@ -34,7 +39,7 @@ header #logo {
   gap: 5px;
   font-size: 10px;
   font-weight: 600;
-  border: 2px solid #000;
+  border: 2px solid;
   border-radius: 50%;
   padding: 13px;
 }
@@ -43,7 +48,6 @@ header #link a {
   text-decoration: none;
   font-size: 20px;
   margin-left: 60px;
-  color: #000;
 }
 
 #counter {
@@ -75,6 +79,7 @@ header #link a {
   height: 250px;
   object-fit: cover;
   margin-bottom: 20px;
+  border-radius: 15px;
 }
 
 #home .container .caption {
@@ -102,10 +107,11 @@ header #link a {
 }
 
 #home .container button {
-  background-color: #fff;
+  background-color: #cd2929;
   padding: 7px;
   margin: 5px 0;
-  box-shadow: 3px 3px #292929;
+  box-shadow: 1px 1px #e4dada;
+  border-radius: 10px;
 }
 
 #home .container button:hover {
