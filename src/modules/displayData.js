@@ -97,7 +97,7 @@ const displayData = async () => {
           inputComment.value = '';
         }
 
-        updateComment();
+        updateComment(movie.id);
       })
 
       const closeMovie = document.querySelector(`#closeBtn${index}`);

@@ -15,13 +15,17 @@ const updateComment = async (id) => {
 
     const comments = document.querySelector('.comments')
     let innertext = '';
-    gotComment.forEach(data => {
-        const { comment, creation_date, username } = data;
-        innertext += `
-        <p>${creation_date} ${username}: ${comment}</p>
-        `;
-    });
-    comments.innerHTML = innertext;  
+    if (gotComment.error) {
+        console.log('No Comment found')
+    } else {
+        gotComment.forEach(data => {
+            const { comment, creation_date, username } = data;
+            innertext += `
+            <p>${creation_date} ${username}: ${comment}</p>
+            `;
+        });
+        comments.innerHTML = innertext;
+    } 
 }
 
 export default updateComment;
