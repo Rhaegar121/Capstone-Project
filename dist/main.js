@@ -135,7 +135,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./util */ \"./src/modules/util.js\");\n\n\nconst countComments = async (id) => {\n  const comments = await (0,_util__WEBPACK_IMPORTED_MODULE_0__.getComment)(id);\n  console.log(comments);\n  let number = 0;\n  for (let index = 0; index < comments.length; index++) {\n    number++;\n  }\n  return number;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (countComments);\n\n//# sourceURL=webpack://webpack/./src/modules/commentCounter.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./util.js */ \"./src/modules/util.js\");\n\n\nconst countComments = async (id) => {\n  const comments = await (0,_util_js__WEBPACK_IMPORTED_MODULE_0__.getComment)(id);\n  let number = 0;\n  for (let index = 0; index < comments.length; index += 1) {\n    number += 1;\n  }\n  return number;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (countComments);\n\n//# sourceURL=webpack://webpack/./src/modules/commentCounter.js?");
 
 /***/ }),
 
