@@ -51,7 +51,7 @@ header #link a {
   text-align: center;
   right: 60px;
   top: 89px;
-  padding: 7px 0px;
+  padding: 7px 0;
   border: 2px solid #000;
   width: 290px;
   box-shadow: 3px 3px #292929;
@@ -113,7 +113,7 @@ header #link a {
 }
 
 #home .container button:active {
- box-shadow: none;
+  box-shadow: none;
 }
 
 footer {
@@ -190,10 +190,10 @@ h2 {
 
 .add_comment {
   gap: 15px;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    margin-top: 20px;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  margin-top: 20px;
 }
 
 form {
