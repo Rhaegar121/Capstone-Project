@@ -104,6 +104,7 @@ header #link a {
   border: var(--my-border);
   box-shadow: 2px 2px black;
   cursor: pointer;
+  color: black;
 }
 
 #home .container button {
@@ -127,7 +128,6 @@ footer {
   bottom: 0;
   width: 100%;
   border-top: 1px solid #cdcdcd;
-  background-color: #fff;
 }
 
 .close {
@@ -137,6 +137,7 @@ footer {
   position: absolute;
   right: 0;
   padding-right: 25px;
+  color: black;
 }
 
 .image {
@@ -156,6 +157,7 @@ footer {
 
 h2 {
   font-size: 50px;
+  color: black;
 }
 
 .comment {
@@ -188,6 +190,10 @@ h2 {
   column-gap: 80px;
 }
 
+.properties div, p, h3, h4, b {
+  color: black;
+}
+
 .comments {
   display: flex;
   flex-direction: column;
@@ -210,6 +216,7 @@ form {
 
 input {
   padding: 5px;
+  color: black;
 }
 
 textarea {
