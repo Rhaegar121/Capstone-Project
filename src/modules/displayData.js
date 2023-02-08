@@ -90,7 +90,6 @@ const displayData = async () => {
           console.log('clicked');
           pushComment(movie.id, inputName.value, inputComment.value);
           const newComment = getComment(movie.id);
-          console.log(newComment);
 
           inputName.value = '';
           inputComment.value = '';

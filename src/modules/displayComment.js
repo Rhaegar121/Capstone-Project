@@ -15,7 +15,7 @@ const updateComment = async (id) => {
 
   const comments = document.querySelector('.comments');
   let innertext = '';
-if (!(gotComment.error)) {
+  if (!(gotComment.error)) {
     gotComment.forEach((data) => {
       const { comment, creation_date, username } = data;
       innertext += `
