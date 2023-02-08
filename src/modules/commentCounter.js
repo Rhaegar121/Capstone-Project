@@ -1,11 +1,10 @@
-import { getComment } from './util';
+import { getComment } from './util.js';
 
 const countComments = async (id) => {
   const comments = await getComment(id);
-  console.log(comments);
   let number = 0;
-  for (let index = 0; index < comments.length; index++) {
-    number++;
+  for (let index = 0; index < comments.length; index += 1) {
+    number += 1;
   }
   return number;
 };
