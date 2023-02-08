@@ -3,9 +3,8 @@ import countComments from './commentCounter.js';
 
 const updateComment = async (id) => {
   // get comments and number of comments
-  // await refreshComment(id);
   const gotComment = await getComment(id);
-  const commentsNo = await countComments(id);
+  const commentsNo = countComments(gotComment);
 
   const commentSection = document.querySelector('h3');
   commentSection.innerHTML = `
