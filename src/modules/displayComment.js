@@ -8,13 +8,12 @@ const updateComment = async (id) => {
     const gotComment = await getComment(id)
     console.log(gotComment)
 
-    const commentSection = document.querySelector('.add_comment');
+    const commentSection = document.querySelector('h3');
     commentSection.innerHTML = `
-    <h3>Comments (${commentsNo})</h3>
+    Comments (${commentsNo})
     `;
 
     const comments = document.querySelector('.comments')
-    console.log(comments)
     let innertext = '';
     gotComment.forEach(data => {
         const { comment, creation_date, username } = data;

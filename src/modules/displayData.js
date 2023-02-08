@@ -67,6 +67,7 @@ const displayData = async () => {
             <div><b>Summary:</b> ${movie.summary}</div>
         </div>
         <section class="add_comment">
+        <h3></h3>
         <div class="comments"></div>
         <h4>Add a comment</h4>
         <form action="">
