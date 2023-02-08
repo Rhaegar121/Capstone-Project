@@ -87,8 +87,9 @@ const displayData = async () => {
         event.preventDefault();
         // add new comment
         if (inputName.value !== '' && inputComment.value !== '') {
-          console.log('clicked');
           pushComment(movie.id, inputName.value, inputComment.value);
+
+          // 1.............................................
           const newComment = getComment(movie.id);
 
           inputName.value = '';
