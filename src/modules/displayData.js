@@ -1,5 +1,5 @@
 import {
-  getData, getLike, getMovie, pushLike, pushComment, getComment,
+  getData, getLike, getMovie, pushLike, pushComment,
 } from './util.js';
 import updateComment from './displayComment.js';
 import movieCount from './movieCounter.js';
