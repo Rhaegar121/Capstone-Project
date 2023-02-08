@@ -39,8 +39,8 @@ const pushComment = async (id, username, comment) => {
     },
     body: JSON.stringify({
       item_id: id,
-      username,
-      comment,
+      username: username,
+      comment: comment,
     }),
   });
 };
@@ -52,5 +52,5 @@ const getComment = async (id) => {
 };
 
 export {
-  getData, getMovie, getLike, pushLike, pushComment, getComment,
+  getData, getMovie, getLike, pushLike, pushComment, getComment
 };

@@ -1,8 +1,8 @@
-import { getComment } from './util.js';
+import { getComment } from "./util";
 
 const refreshComment = async (id) => {
-  const gotComment = await getComment(id);
-  //
+    const gotComment = await getComment(id)
+    // 
     console.log(gotComment)
 }
 

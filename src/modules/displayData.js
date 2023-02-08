@@ -1,5 +1,5 @@
 import {
-  getData, getLike, getMovie, pushLike, pushComment,
+  getData, getLike, getMovie, pushLike, pushComment, getComment,
 } from './util.js';
 import updateComment from './displayComment.js';
 import movieCount from './movieCounter.js';
@@ -13,6 +13,7 @@ const displayData = async () => {
 
   // looping through the array
   dataArray.forEach((data, index) => {
+
     // filtering the like for the movie id
     const likes = allLikes.filter((like) => like.item_id === data.id);
 
@@ -79,22 +80,26 @@ const displayData = async () => {
 
       updateComment(movie.id);
 
-      const inputName = document.getElementById('name');
-      const inputComment = document.getElementById('comments');
-      const submit = document.getElementById('submitComment');
+      const inputName = document.getElementById('name')
+      const inputComment = document.getElementById('comments')
+      const submit = document.getElementById('submitComment')
 
       submit.addEventListener('click', (event) => {
         event.preventDefault();
         // add new comment
         if (inputName.value !== '' && inputComment.value !== '') {
+          console.log('clicked')
           pushComment(movie.id, inputName.value, inputComment.value);
+          const newComment = getComment(movie.id)
+          console.log(newComment)
 
           inputName.value = '';
           inputComment.value = '';
         }
 
         updateComment(movie.id);
-      });
+        
+      })
 
       const closeMovie = document.querySelector(`#closeBtn${index}`);
       closeMovie.addEventListener('click', () => comment.classList.add('hide'));
