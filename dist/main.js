@@ -145,7 +145,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./util.js */ \"./src/modules/util.js\");\n/* harmony import */ var _commentCounter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./commentCounter.js */ \"./src/modules/commentCounter.js\");\n/* harmony import */ var _refreshComments_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./refreshComments.js */ \"./src/modules/refreshComments.js\");\n\n\n\n\nconst updateComment = async (id) => {\n  // get comments and number of comments\n  await (0,_refreshComments_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(id);\n  const gotComment = await (0,_util_js__WEBPACK_IMPORTED_MODULE_0__.getComment)(id);\n  const commentsNo = await (0,_commentCounter_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(id);\n\n  const commentSection = document.querySelector('h3');\n  commentSection.innerHTML = `\n    Comments (${commentsNo})\n    `;\n\n  const comments = document.querySelector('.comments');\n  let innertext = '';\n  if (!(gotComment.error)) {\n    gotComment.forEach((data) => {\n      innertext += `\n            <p>${data.creation_date} ${data.username}: ${data.comment}</p>\n            `;\n    });\n    comments.innerHTML = innertext;\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (updateComment);\n\n\n//# sourceURL=webpack://webpack/./src/modules/displayComment.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./util.js */ \"./src/modules/util.js\");\n/* harmony import */ var _commentCounter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./commentCounter.js */ \"./src/modules/commentCounter.js\");\n\n\n\nconst updateComment = async (id) => {\n  // get comments and number of comments\n  // await refreshComment(id);\n  const gotComment = await (0,_util_js__WEBPACK_IMPORTED_MODULE_0__.getComment)(id);\n  const commentsNo = await (0,_commentCounter_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(id);\n\n  const commentSection = document.querySelector('h3');\n  commentSection.innerHTML = `\n    Comments (${commentsNo})\n    `;\n\n  const comments = document.querySelector('.comments');\n  let innertext = '';\n  if (!(gotComment.error)) {\n    gotComment.forEach((data) => {\n      innertext += `\n            <p>${data.creation_date} ${data.username}: ${data.comment}</p>\n            `;\n    });\n    comments.innerHTML = innertext;\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (updateComment);\n\n\n//# sourceURL=webpack://webpack/./src/modules/displayComment.js?");
 
 /***/ }),
 
@@ -166,16 +166,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst movieCount = (movie) => movie.length;\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (movieCount);\n\n//# sourceURL=webpack://webpack/./src/modules/movieCounter.js?");
-
-/***/ }),
-
-/***/ "./src/modules/refreshComments.js":
-/*!****************************************!*\
-  !*** ./src/modules/refreshComments.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./util.js */ \"./src/modules/util.js\");\n\n\nconst refreshComment = async (id) => {\n  const gotComment = await (0,_util_js__WEBPACK_IMPORTED_MODULE_0__.getComment)(id);\n  //\n  console.log(gotComment);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (refreshComment);\n\n//# sourceURL=webpack://webpack/./src/modules/refreshComments.js?");
 
 /***/ }),
 
