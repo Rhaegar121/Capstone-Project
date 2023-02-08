@@ -13,17 +13,16 @@ const updateComment = async (id) => {
     <h3>Comments (${commentsNo})</h3>
     `;
 
-    let innertext = '';
     const comments = document.querySelector('.comments')
+    console.log(comments)
+    let innertext = '';
     gotComment.forEach(data => {
         const { comment, creation_date, username } = data;
         innertext += `
         <p>${creation_date} ${username}: ${comment}</p>
         `;
     });
-    comments.innerHTML = innertext;
-
-    
+    comments.innerHTML = innertext;  
 }
 
 export default updateComment;
