@@ -83,14 +83,11 @@ const displayData = async () => {
       const inputComment = document.getElementById('comments');
       const submit = document.getElementById('submitComment');
 
-      submit.addEventListener('click', (event) => {
+      submit.addEventListener('click', async (event) => {
         event.preventDefault();
         // add new comment
         if (inputName.value !== '' && inputComment.value !== '') {
-          pushComment(movie.id, inputName.value, inputComment.value);
-
-          // 1.............................................
-          const newComment = getComment(movie.id);
+          await pushComment(movie.id, inputName.value, inputComment.value);
 
           inputName.value = '';
           inputComment.value = '';
