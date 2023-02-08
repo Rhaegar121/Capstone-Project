@@ -17,9 +17,8 @@ const updateComment = async (id) => {
   let innertext = '';
   if (!(gotComment.error)) {
     gotComment.forEach((data) => {
-      const { comment, creation_date, username } = data;
       innertext += `
-            <p>${creation_date} ${username}: ${comment}</p>
+            <p>${data.creation_date} ${data.username}: ${data.comment}</p>
             `;
     });
     comments.innerHTML = innertext;
