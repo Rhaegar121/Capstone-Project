@@ -1,9 +1,6 @@
-const countComments = (comments) => {
-  let number = 0;
-  for (let index = 0; index < comments.length; index += 1) {
-    number += 1;
-  }
-  return number;
+const countComments = () => {
+  const comment = document.querySelectorAll('.comment-text');
+  return comment.length;
 };
 
 export default countComments;
