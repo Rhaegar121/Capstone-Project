@@ -101,10 +101,11 @@ header #link a {
   width: fit-content;
   padding: 5px;
   align-self: flex-end;
-  border: var(--my-border);
   box-shadow: 2px 2px black;
   cursor: pointer;
-  color: black;
+  background-color: #cd2929;
+  padding: 7px;
+  border-radius: 10px;
 }
 
 #home .container button {
