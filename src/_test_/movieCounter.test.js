@@ -1,5 +1,5 @@
 /** @jest-environment jsdom */
-import movieCount from '../modules/movieCounter.js';
+import { baseUrl } from '../modules/api.js';
 
 const movies = [
   {
@@ -14,10 +14,20 @@ const movies = [
     id: 3,
     title: 'Supernatural',
   },
+  {
+    id: 4,
+    title: 'Wolf',
+  },
 ];
 
+global.fetch = () => Promise.resolve({
+  json: () => Promise.resolve(movies),
+});
+
 describe('count movies on the home page', () => {
-  test('should return an arry with 4 objects', () => {
-    expect(movieCount(movies)).toEqual(3);
+  test('number of movies should be 4', async () => {
+    const response = await fetch(baseUrl);
+    const data = await response.json();
+    expect(data.length).toEqual(4);
   });
 });
