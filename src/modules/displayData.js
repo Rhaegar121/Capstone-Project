@@ -32,6 +32,8 @@ const displayData = async () => {
     const likeBtn = dataCard.querySelector('.fa-heart');
     likeBtn.onclick = () => {
       likeBtn.style.color = 'red';
+      likeBtn.classList.remove('fa-regular');
+      likeBtn.classList.add('fa-solid');
       pushLike(data.id);
       const like = dataCard.querySelector('#like');
       if (likes.length > 0) {

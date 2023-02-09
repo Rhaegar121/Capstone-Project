@@ -90,6 +90,7 @@ header #link #movie {
 
 #home .container .caption .fa-heart:hover {
   cursor: pointer;
+  transform: translateY(-10%);
 }
 
 #home .container .caption .fa-heart:active {
