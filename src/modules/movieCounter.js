@@ -1,7 +1,6 @@
 const movieCount = () => {
-  const home = document.querySelector('#home');
-  const count = home.childElementCount;
-  return count;
+  const count = document.querySelectorAll('.container');
+  return count.length;
 };
 
 export default movieCount;
