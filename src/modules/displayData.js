@@ -15,7 +15,6 @@ const displayData = async () => {
   dataArray.forEach((data, index) => {
     // filtering the like for the movie id
     const likes = allLikes.filter((like) => like.item_id === data.id);
-
     // creating a new div element
     const dataCard = document.createElement('div');
     dataCard.classList.add('container');
@@ -32,9 +31,14 @@ const displayData = async () => {
     // updating likes on the home page
     const likeBtn = dataCard.querySelector('.fa-heart');
     likeBtn.onclick = () => {
-      const like = dataCard.querySelector('#like');
+      likeBtn.style.color = 'red';
       pushLike(data.id);
-      like.innerHTML = `${likes[0].likes + 1} Likes`;
+      const like = dataCard.querySelector('#like');
+      if (likes.length > 0) {
+        like.innerHTML = `${likes[0].likes + 1} Likes`;
+      } else {
+        like.innerHTML = '1 Likes';
+      }
     };
 
     // counting movies
