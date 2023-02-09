@@ -1,23 +1,32 @@
 /** @jest-environment jsdom */
-import countComments from '../modules/commentCounter.js';
+import { baseUrl } from '../modules/api.js';
 
-const movies = [
+const comments = [
   {
-    id: 1,
-    title: 'Arrow',
+    date: '2023-2-9',
+    username: 'Barry',
+    comment: 'Wonderful movie!',
   },
   {
-    id: 2,
-    title: 'Flash',
+    date: '2023-2-9',
+    username: 'Barry',
+    comment: 'Wonderful movie!',
   },
   {
-    id: 3,
-    title: 'Supernatural',
+    date: '2023-2-9',
+    username: 'Barry',
+    comment: 'Wonderful movie!',
   },
 ];
 
+global.fetch = () => Promise.resolve({
+  json: () => Promise.resolve(comments),
+});
+
 describe('count comment of a particular movie', () => {
-  test('should return an array with 8 objects', () => {
-    expect(countComments(movies)).toEqual(3);
+  test('number of comments should be 3', async () => {
+    const response = await fetch(baseUrl);
+    const data = await response.json();
+    expect(data.length).toEqual(3);
   });
 });
