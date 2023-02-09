@@ -38,8 +38,10 @@ const displayData = async () => {
     };
 
     // counting movies
-    const countMovie = document.querySelector('#counter');
-    countMovie.innerHTML = `Number of Movies and Series: ${movieCount(dataArray)}`;
+    const countMovie1 = document.querySelector('#movie');
+    const countMovie2 = document.querySelector('#counter');
+    countMovie1.innerHTML = `Movies (${movieCount(dataArray)})`;
+    countMovie2.innerHTML = `Number of Movies and Series: ${movieCount(dataArray)}`;
 
     // opening comment popup page
     const movieBtn = document.getElementById(`film${index}`);

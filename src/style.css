@@ -21,7 +21,7 @@ img {
 header {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 10px 60px;
   border-bottom: 1px solid #cdcdcd;
@@ -44,6 +44,10 @@ header #link a {
   font-size: 20px;
   margin-left: 60px;
   color: #000;
+}
+
+header #link #movie {
+  text-decoration: underline;
 }
 
 #counter {
