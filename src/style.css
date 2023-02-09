@@ -219,6 +219,10 @@ input {
   color: black;
 }
 
+#like {
+  color: white;
+}
+
 textarea {
   padding: 5px;
   width: 300px;
