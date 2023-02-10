@@ -69,7 +69,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- live demo link will appear when ready
+- [Live Demo Link](https://rhaegar121.github.io/Capstone-Project/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
